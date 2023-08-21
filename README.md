@@ -1,34 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Placeholder for image`<img src="https://raw.githubusercontent.com/business-thiem/NextJS13-scott-tut/main/assets/NextJS13-todo-ss1.png" width="1200" height="500">`
 
-## Getting Started
+# Overview
 
-First, run the development server:
+A journal fullstack app that just ai to infer user's mood
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## App Info
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- The App is a journaling app... more details to be added later.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- NextJS : server-sided logic for server-sided rendering (SSR), great for SEO, makes loading pages faster for client. Must opt into 'use client' react scripts
+- Tailwind : CSS library
+- Prisma : ORM, create tables in a human-readable way
+- PlanetScale (DB) : 
+- NodeJS : JS package manager
+- API : ?
+- a.i. : ?
 
-## Learn More
+Link to course notes and future references: https://frontendmasters.com/courses/fullstack-app-next-v3/setup-app-homepage/ 
 
-To learn more about Next.js, take a look at the following resources:
+Prisma Studio Notes:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `npx prisma studio` to load the DB with GUI
+- `npx prisma generate && npm run build` in vercel build deployments (override)
