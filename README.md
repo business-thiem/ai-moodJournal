@@ -17,9 +17,11 @@ A journal fullstack app that just ai to infer user's mood
 - NodeJS : JS package manager
 - API : ?
 - a.i. : ?
-- Clerk: Authentication and user management built for React and NextJS
+- Clerk: Authentication and user management built for React and NextJS. See https://clerk.com/ for more details
 
-Link to course notes and future references: https://frontendmasters.com/courses/fullstack-app-next-v3/setup-app-homepage/
+Link to course notes and future references:
+
+- https://frontendmasters.com/courses/fullstack-app-next-v3/setup-app-homepage/
 
 Prisma Studio Notes:
 
