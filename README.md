@@ -28,6 +28,8 @@ Link to course notes and future references:
 
 Prisma Studio Notes:
 
+- `npm insall @prisma/client`: package installation for production
+- `npm install prisma --save-dev`: for dev dependencies
 - `npx prisma studio` to load the DB with GUI
 - `npx prisma generate && npm run build` in vercel build deployments (override)
 
