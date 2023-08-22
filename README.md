@@ -37,7 +37,7 @@ PlanetScale Notes:
 
 - create the org, create db, install via scoop. https://planetscale.com/docs/concepts/planetscale-environment-setup
 
-##### Workflow notes
+### Workflows guide for myself in future
 
 Planescale workflow:
 
