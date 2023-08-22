@@ -18,6 +18,7 @@ A journal fullstack app that just ai to infer user's mood
 - API : ?
 - a.i. : ?
 - Clerk: Authentication and user management built for React and NextJS. See https://clerk.com/ for more details
+- Prettier: Makes code look nice and formatted. Adds semicolons (good habit from Java)
 
 Link to course notes and future references:
 
