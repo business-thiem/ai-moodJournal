@@ -36,9 +36,14 @@ Prisma Studio Notes:
 PlanetScale Notes:
 
 - create the org, create db, install via scoop. https://planetscale.com/docs/concepts/planetscale-environment-setup
+
+##### Workflow notes
+
+Planescale workflow:
+
 - cmd `pscale auth login`
 - switch orgs: `pscale org switch mood-journal-db`
 - create branch `pscale branch create mood dev`
 - connect `pscale connect mood dev --port [port#]`
 - `npx prisma db push` push to open local IP:port after connection to planetscale via shell
-- - `Your database is now in sync with your Prisma schema.`
+- - `Your database is now in sync with your Prisma schema.` on success
