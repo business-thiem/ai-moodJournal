@@ -13,12 +13,13 @@ A journal fullstack app that just ai to infer user's mood
 - NextJS : server-sided logic for server-sided rendering (SSR), great for SEO, makes loading pages faster for client. Must opt into 'use client' react scripts
 - Tailwind : CSS library
 - Prisma : ORM, create tables in a human-readable way
-- PlanetScale (DB) : 
+- PlanetScale (DB) :
 - NodeJS : JS package manager
 - API : ?
 - a.i. : ?
+- Clerk: Authentication and user management built for React and NextJS
 
-Link to course notes and future references: https://frontendmasters.com/courses/fullstack-app-next-v3/setup-app-homepage/ 
+Link to course notes and future references: https://frontendmasters.com/courses/fullstack-app-next-v3/setup-app-homepage/
 
 Prisma Studio Notes:
 
