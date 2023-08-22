@@ -13,7 +13,7 @@ A journal fullstack app that just ai to infer user's mood
 - NextJS : server-sided logic for server-sided rendering (SSR), great for SEO, makes loading pages faster for client. Must opt into 'use client' react scripts
 - Tailwind : CSS library
 - Prisma : ORM, create tables in a human-readable way
-- PlanetScale (DB) :
+- PlanetScale (DB) : Serverless MySQL DB platform
 - NodeJS : JS package manager
 - API : ?
 - a.i. : ?
@@ -24,7 +24,17 @@ Link to course notes and future references:
 
 - https://frontendmasters.com/courses/fullstack-app-next-v3/setup-app-homepage/
 
+## Personal Notes
+
 Prisma Studio Notes:
 
 - `npx prisma studio` to load the DB with GUI
 - `npx prisma generate && npm run build` in vercel build deployments (override)
+
+PlanetScale Notes:
+
+- create the org, create db, install via scoop. https://planetscale.com/docs/concepts/planetscale-environment-setup
+- cmd `pscale auth login`
+- switch orgs: `pscale org switch mood-journal-db`
+- create branch `pscale branch create mood dev`
+- connect `pscale connect mood dev --port [port#]`
