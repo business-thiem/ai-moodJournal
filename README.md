@@ -48,3 +48,4 @@ Planescale workflow:
 - connect `pscale connect mood dev --port [port#]`
 - `npx prisma db push` push to open local IP:port after connection to planetscale via shell
 - - `Your database is now in sync with your Prisma schema.` on success
+- - `There might be data loss when applying the changes`: safety rail in case you're overwriting old data without the new constraints from new schema. Yes it's okay in the dev env. Be careful in Production
