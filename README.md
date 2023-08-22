@@ -40,3 +40,4 @@ PlanetScale Notes:
 - switch orgs: `pscale org switch mood-journal-db`
 - create branch `pscale branch create mood dev`
 - connect `pscale connect mood dev --port [port#]`
+- `npx prisma db push` push to open local IP:port after connection to planetscale via shell
