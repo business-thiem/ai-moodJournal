@@ -41,3 +41,4 @@ PlanetScale Notes:
 - create branch `pscale branch create mood dev`
 - connect `pscale connect mood dev --port [port#]`
 - `npx prisma db push` push to open local IP:port after connection to planetscale via shell
+- - `Your database is now in sync with your Prisma schema.`
