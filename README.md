@@ -30,7 +30,8 @@ Prisma Studio Notes:
 
 - `npm insall @prisma/client`: package installation for production
 - `npm install prisma --save-dev`: for dev dependencies
-- `npx prisma studio` to load the DB with GUI
+- `npx prisma format` cleans up schema after you finish. (Important: it also writes your side relations between models)
+- `npx prisma studio` displays DB on browser
 - `npx prisma generate && npm run build` in vercel build deployments (override)
 
 PlanetScale Notes:
