@@ -33,7 +33,8 @@ model JournalEntry {
 
   analysis Analysis?
 
-  @@index([userId])
+  // personal fix added name to compound unique id. reference https://github.com/nextauthjs/next-auth/issues/3815 
+  @@unique([userId, id], name: "userId_id")
 }
 
 model Analysis {
