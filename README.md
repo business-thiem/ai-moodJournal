@@ -15,7 +15,7 @@ A journal fullstack app that just ai to infer user's mood
 - Prisma : ORM, create tables in a human-readable way
 - PlanetScale (DB) : Serverless MySQL DB platform
 - NodeJS : JS package manager
-- API : OpenAi API. See https://platform.openai.com/
+- API : OpenAi API GPT3.5-turbo. See https://platform.openai.com/
 - Clerk: Authentication and user management built for React and NextJS. See https://clerk.com/ for more details
 - Prettier: Makes code look nice and formatted. Adds semicolons (good habit from Java)
 - LangChainjs: popular LLMs js framework for working with ai. See: https://js.langchain.com/docs/get_started/installation

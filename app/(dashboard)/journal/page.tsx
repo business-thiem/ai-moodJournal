@@ -1,5 +1,6 @@
 import EntryCard from '@/components/EntryCard';
 import NewEntryCard from '@/components/NewEntryCard';
+import { analyze } from '@/utils/ai';
 import { getUserByClerkID } from '@/utils/auth';
 import { prisma } from '@/utils/db';
 import Link from 'next/link';
@@ -14,6 +15,10 @@ const getEntries = async () => {
       createdAt: 'desc',
     },
   });
+
+  await analyze(
+    'If you were Uncle Iroh from Avatar the Last Airbender, what would be the top 5 real world teas you recommend?'
+  );
 
   return entries;
 };
