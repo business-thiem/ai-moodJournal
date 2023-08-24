@@ -29,9 +29,10 @@ const Editor = ({ entry }) => {
           &nbsp;
         </div>
         <div className="text-xs text-gray-400/80 p-1">
-          Note is set to auto save every 2 seconds after user interaction
+          Content auto saves every 2 seconds after user interaction
         </div>
       </div>
+
       <textarea
         className="w-full h-full p-8 text-xl outline-none"
         value={value}
