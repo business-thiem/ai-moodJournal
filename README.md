@@ -32,7 +32,7 @@ A journal fullstack app that just ai to infer user's mood
 
 Full output:
 
-````json
+````
 "JSON Schema" is a declarative language that allows you to annotate and validate JSON documents.
 
 For example, the example "JSON Schema" instance {{"properties": {{"foo": {{"description": "a list of test words", "type": "array", "items": {{"type": "string"}}}}}}, "required": ["foo"]}}}}
