@@ -7,6 +7,7 @@ A journal fullstack app that just ai to infer user's mood
 ## App Info
 
 - The App is a journaling app... more details to be added later.
+- Reads journal entry from user's journal, creates a prompt that enforces GPT to respond with consistent JSON with proper datatypes.
 
 ## Tech used
 
@@ -18,7 +19,10 @@ A journal fullstack app that just ai to infer user's mood
 - API : OpenAi API GPT3.5-turbo. See https://platform.openai.com/
 - Clerk: Authentication and user management built for React and NextJS. See https://clerk.com/ for more details
 - Prettier: Makes code look nice and formatted. Adds semicolons (good habit from Java)
-- LangChainjs: popular LLMs js framework for working with ai. See: https://js.langchain.com/docs/get_started/installation
+- LangChain: popular LLMs js framework for working with ai. See: https://js.langchain.com/docs/get_started/installation
+- Zod: See: https://zod.dev/
+
+- LangChain & Zod: Zod is a schema validator used by LangChain's output parser. Langchain describes to GPT the purpose of each object and the expected value. In tandem both techs help get back consistent JSON responses from GPT.
 
 Link to course notes and future references:
 
@@ -28,7 +32,7 @@ Link to course notes and future references:
 
 Prisma Studio Notes:
 
-- `npm insall @prisma/client`: package installation for production
+- `npm install @prisma/client`: package installation for production
 - `npm install prisma --save-dev`: for dev dependencies
 - `npx prisma format` cleans up schema after you finish. (Important: it also writes your side relations between models)
 - `npx prisma studio` displays DB on browser
