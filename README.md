@@ -11,8 +11,7 @@ A journal fullstack app that just ai to infer user's mood
 - Why would the user just not give prompts to GPT? (the problem solved by the app):
 - - Simplifies prompting the a.i., saves journal entries for each user (i.e. just typing their text instead of being bloated with "give me an analysis of x", tell me the: "mood, color, and does it contain negative emotions")
 - - Gives back consistent analysis of the journal entries
-- - Summarizes the user's mood from all of their entries.
-- -
+- - Summarizes the user's mood from all of their entries. Changes
 
 ### Example
 
