@@ -19,7 +19,7 @@ A journal fullstack app that just ai to infer user's mood
 
 `Today was okay. I guess. I found a new tea flavor that was cool but then I got a flat tire. :)`
 
-##### output (from lang parser):
+##### output (from LangChain & Zod parser):
 
 ```json
 {
@@ -29,6 +29,22 @@ A journal fullstack app that just ai to infer user's mood
   "color": "#ff0000"
 }
 ```
+
+Full output:
+
+````json
+"JSON Schema" is a declarative language that allows you to annotate and validate JSON documents.
+
+For example, the example "JSON Schema" instance {{"properties": {{"foo": {{"description": "a list of test words", "type": "array", "items": {{"type": "string"}}}}}}, "required": ["foo"]}}}}
+would match an object with one required property, "foo". The "type" property specifies "foo" must be an "array", and the "description" property semantically describes it as "a list of test words". The items within "foo" must be strings.
+Thus, the object {{"foo": ["bar", "baz"]}} is a well-formatted instance of this example "JSON Schema". The object {{"properties": {{"foo": ["bar", "baz"]}}}} is not well-formatted.
+
+Your output will be parsed and type-checked according to the provided schema instance, so make sure all fields in your output match the schema exactly and there are no trailing commas!
+
+Here is the JSON Schema instance your output must adhere to. Include the enclosing markdown codeblock:
+```json
+{"type":"object","properties":{"mood":{"type":"string","description":"the mood of the person who wrote the journal entry."},"summary":{"type":"string","description":"quick summary of the entire entry."},"negative":{"type":"boolean","description":"is the journal entry negative? (i.e. does it contain negative emotions?)."},"color":{"type":"string","description":"a hexidecimal color code that represents the mood of the entry. Example #0101fe for blue representing happiness."}},"required":["mood","summary","negative","color"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}```
+````
 
 ## Tech used
 
@@ -74,7 +90,3 @@ Planescale workflow:
 - `npx prisma db push` push to open local IP:port after connection to planetscale via shell
 - - `Your database is now in sync with your Prisma schema.` on success
 - - `There might be data loss when applying the changes`: safety rail in case you're overwriting old data without the new constraints from new schema. Yes it's okay in the dev env. Be careful in Production
-
-```
-
-```
