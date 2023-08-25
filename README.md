@@ -19,7 +19,7 @@ A journal fullstack app that just ai to infer user's mood
 
 `Today was okay. I guess. I found a new tea flavor that was cool but then I got a flat tire. :)`
 
-##### output (from LangChain & Zod parser):
+##### output to journal entry (from LangChain & Zod parser):
 
 ```json
 {
@@ -44,6 +44,14 @@ Your output will be parsed and type-checked according to the provided schema ins
 Here is the JSON Schema instance your output must adhere to. Include the enclosing markdown codeblock:
 ```json
 {"type":"object","properties":{"mood":{"type":"string","description":"the mood of the person who wrote the journal entry."},"summary":{"type":"string","description":"quick summary of the entire entry."},"negative":{"type":"boolean","description":"is the journal entry negative? (i.e. does it contain negative emotions?)."},"color":{"type":"string","description":"a hexidecimal color code that represents the mood of the entry. Example #0101fe for blue representing happiness."}},"required":["mood","summary","negative","color"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}```
+
+Today was okay. I guess. I found a new tea flavor that was cool but then I got a flat tire. :)
+{
+  "mood": "okay",
+  "summary": "Today was okay. I guess.",
+  "negative": true,
+  "color": "#ff0000"
+}
 ````
 
 ## Tech used
