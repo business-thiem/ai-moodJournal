@@ -22,7 +22,7 @@ A journal fullstack app that just ai to infer user's mood
 
 #### output
 
-output: ```
+```
 {
 "mood": "okay",
 "summary": "Today was okay. I guess.",
@@ -31,9 +31,6 @@ output: ```
 }
 
 ```
-
-
-
 
 ## Tech used
 
@@ -79,4 +76,7 @@ Planescale workflow:
 - `npx prisma db push` push to open local IP:port after connection to planetscale via shell
 - - `Your database is now in sync with your Prisma schema.` on success
 - - `There might be data loss when applying the changes`: safety rail in case you're overwriting old data without the new constraints from new schema. Yes it's okay in the dev env. Be careful in Production
+
+```
+
 ```
