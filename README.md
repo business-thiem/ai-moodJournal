@@ -17,14 +17,15 @@ A journal fullstack app that just ai to infer user's mood
 
 ##### input (user prompt):
 
-`Today was okay. I guess. I found a new tea flavor that was cool but then I got a flat tire. :)`
+`Dammit! So much happened today. I found my favorite tea, Sencha green tea. I won the lottery, but I failed my exam and my girlfriend broke up with me.`
 
 ##### output to journal entry (from LangChain & Zod parser):
 
 ```json
 {
-  "mood": "okay",
-  "summary": "Today was okay. I guess.",
+  "mood": "mixed",
+  "summary": "A rollercoaster of emotions",
+  "subject": "Events of the day",
   "negative": true,
   "color": "#ff0000"
 }
@@ -32,7 +33,12 @@ A journal fullstack app that just ai to infer user's mood
 
 Full output:
 
+- Note: It's a full prompt to GPT. It even teaches it what a JSON schema is, looks like, and how it should respond to the user's prompt.
+
 ````
+Analyze the following journal entry. Follow the instructions and format your response to match the format instructions, no matter what!
+You must format your output as a JSON value that adheres to a given "JSON Schema" instance.
+
 "JSON Schema" is a declarative language that allows you to annotate and validate JSON documents.
 
 For example, the example "JSON Schema" instance {{"properties": {{"foo": {{"description": "a list of test words", "type": "array", "items": {{"type": "string"}}}}}}, "required": ["foo"]}}}}
@@ -43,12 +49,14 @@ Your output will be parsed and type-checked according to the provided schema ins
 
 Here is the JSON Schema instance your output must adhere to. Include the enclosing markdown codeblock:
 ```json
-{"type":"object","properties":{"mood":{"type":"string","description":"the mood of the person who wrote the journal entry."},"summary":{"type":"string","description":"quick summary of the entire entry."},"negative":{"type":"boolean","description":"is the journal entry negative? (i.e. does it contain negative emotions?)."},"color":{"type":"string","description":"a hexidecimal color code that represents the mood of the entry. Example #0101fe for blue representing happiness."}},"required":["mood","summary","negative","color"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}```
+{"type":"object","properties":{"mood":{"type":"string","description":"the mood of the person who wrote the journal entry."},"summary":{"type":"string","description":"quick summary of the entire entry."},"subject":{"type":"string","description":"the subject of the journal entry."},"negative":{"type":"boolean","description":"is the journal entry negative? (i.e. does it contain negative emotions?)."},"color":{"type":"string","description":"a hexidecimal color code that represents the mood of the entry. Example #0101fe for blue representing happiness."}},"required":["mood","summary","subject","negative","color"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+```
 
-Today was okay. I guess. I found a new tea flavor that was cool but then I got a flat tire. :)
+Dammit! So much happened today. I found my favorite tea, Sencha green tea. I won the lottery, but I failed my exam and my girlfriend broke up with me.
 {
-  "mood": "okay",
-  "summary": "Today was okay. I guess.",
+  "mood": "mixed",
+  "summary": "A rollercoaster of emotions",
+  "subject": "Events of the day",
   "negative": true,
   "color": "#ff0000"
 }
