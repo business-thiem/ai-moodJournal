@@ -16,9 +16,9 @@ const getEntries = async () => {
     },
   });
 
-  await analyze(
-    `Today was okay. I guess. I found a new tea flavor that was cool but then I got a flat tire. :) `
-  );
+  // await analyze(
+  //   `Dammit! So much happened today. I found my favorite tea, Sencha green tea. I won the lottery, but I failed my exam and my girlfriend broke up with me. `
+  // );
 
   return entries;
 };
