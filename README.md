@@ -12,6 +12,28 @@ A journal fullstack app that just ai to infer user's mood
 - - Simplifies prompting the a.i., saves journal entries for each user (i.e. just typing their text instead of being bloated with "give me an analysis of x", tell me the: "mood, color, and does it contain negative emotions")
 - - Gives back consistent analysis of the journal entries
 - - Summarizes the user's mood from all of their entries.
+- -
+
+### Example
+
+#### input:
+
+`Today was okay. I guess. I found a new tea flavor that was cool but then I got a flat tire. :)`
+
+#### output
+
+output: ```
+{
+"mood": "okay",
+"summary": "Today was okay. I guess.",
+"negative": true,
+"color": "#ff0000"
+}
+
+```
+
+
+
 
 ## Tech used
 
@@ -57,3 +79,4 @@ Planescale workflow:
 - `npx prisma db push` push to open local IP:port after connection to planetscale via shell
 - - `Your database is now in sync with your Prisma schema.` on success
 - - `There might be data loss when applying the changes`: safety rail in case you're overwriting old data without the new constraints from new schema. Yes it's okay in the dev env. Be careful in Production
+```
