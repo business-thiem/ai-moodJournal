@@ -16,10 +16,6 @@ const getEntries = async () => {
     },
   });
 
-  // await analyze(
-  //   `Dammit! So much happened today. I found my favorite tea, Sencha green tea. I won the lottery, but I failed my exam and my girlfriend broke up with me. `
-  // );
-
   return entries;
 };
 
