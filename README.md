@@ -79,7 +79,8 @@ Dammit! So much happened today. I found my favorite tea, Sencha green tea. I won
 
 Link to course notes and future references:
 
-- https://frontendmasters.com/courses/fullstack-app-next-v3/setup-app-homepage/
+- Github Repo: https://github.com/Hendrixer/fullstack-ai-nextjs
+- Video Course: https://frontendmasters.com/courses/fullstack-app-next-v3/setup-app-homepage/
 
 ## Personal Notes
 
