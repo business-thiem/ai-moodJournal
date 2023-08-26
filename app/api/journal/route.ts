@@ -1,3 +1,4 @@
+import { analyze } from '@/utils/ai';
 import { getUserByClerkID } from '@/utils/auth';
 import { prisma } from '@/utils/db';
 import { revalidatePath } from 'next/cache';
@@ -9,6 +10,16 @@ export const POST = async () => {
     data: {
       userId: user.id,
       content: 'Tell the a.i. overlords about your day',
+    },
+  });
+
+  const analysis = await analyze(entry.content);
+
+  // ...analysis copies the exact schema as it was given in entry from zod schema: hover mouse over entry and analysis variables.
+  await prisma.analysis.create({
+    data: {
+      entryId: entry.id,
+      ...analysis,
     },
   });
 
