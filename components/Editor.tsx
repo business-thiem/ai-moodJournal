@@ -10,7 +10,7 @@ const Editor = ({ entry }) => {
   const [analysis, setAnalysis] = useState(entry.analysis);
   const [isLoading, setIsLoading] = useState(false);
 
-  const { mood, summary, color, subject, negative } = entry?.analysis;
+  const { mood, summary, color, subject, negative } = analysis;
   const analysisData = [
     { name: 'Summary', value: summary },
     { name: 'Subject', value: subject },
@@ -22,7 +22,7 @@ const Editor = ({ entry }) => {
     data: value,
     onSave: async (_value) => {
       setIsLoading(true);
-      const { data } = await updateEntry(entry.id, _value);
+      const data = await updateEntry(entry.id, _value);
       setAnalysis(data.analysis);
       setIsLoading(false);
     },
