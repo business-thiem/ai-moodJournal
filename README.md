@@ -96,6 +96,13 @@ PlanetScale Notes:
 
 - create the org, create db, install via scoop. https://planetscale.com/docs/concepts/planetscale-environment-setup
 
+LangChain Notes:
+
+- If a.i. call goes over token/word limit. Use a Vector DB / embeddings.
+  - LangChains' solution: https://js.langchain.com/docs/modules/chains/document/
+    - "These are the core chains for working with Documents. They are useful for summarizing documents, answering questions over documents, extracting information from documents, and more."
+  - Vector DB / embedding: https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
+
 ### Workflows guide for myself in future
 
 Planescale workflow:
