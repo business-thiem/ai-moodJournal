@@ -2,6 +2,7 @@ import { PromptTemplate } from 'langchain/prompts';
 import { OpenAI } from 'langchain/llms/openai';
 import { StructuredOutputParser } from 'langchain/output_parsers';
 import z from 'zod';
+import { Document } from 'langchain/document';
 
 const parser = StructuredOutputParser.fromZodSchema(
   z.object({
@@ -51,4 +52,17 @@ export const analyze = async (content) => {
   } catch (e) {
     console.log(e);
   }
+};
+
+// essentially gives an analysis of user's all journal entries. Bypass token/word limit of OpenAI
+// Vector DB (super simplified). See: https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
+const qa = async (question, entries) => {
+  const docs = entries.map((entry) => {
+    return new Document({
+      pageContent: entry.content,
+      metadata: { id: entry.id, createdAt: entry.createdAt },
+    });
+  });
+
+  const model = new OpenAI({ temperature: 0, modelName: 'gpt-3.5-turbo' });
 };
