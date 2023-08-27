@@ -9,9 +9,9 @@ A journal fullstack app that just ai to infer user's mood
 - The App is a journaling app... more details to be added later.
 - Reads journal entry from user's journal, creates a prompt that enforces GPT to respond with consistent JSON with proper datatypes.
 - Why would the user just not give prompts to GPT? (the problem solved by the app):
-- - Simplifies prompting the a.i., saves journal entries for each user (i.e. just typing their text instead of being bloated with "give me an analysis of x", tell me the: "mood, color, and does it contain negative emotions")
-- - Gives back consistent analysis of the journal entries
-- - Summarizes the user's mood from all of their entries.
+  - Simplifies prompting the a.i., saves journal entries for each user (i.e. just typing their text instead of being bloated with "give me an analysis of x", tell me the: "mood, color, and does it contain negative emotions")
+  - Gives back consistent analysis of the journal entries
+  - Summarizes the user's mood from all of their entries.
 
 #### Example
 
@@ -101,6 +101,7 @@ LangChain Notes:
 - If a.i. call goes over token/word limit. Use a Vector DB / embeddings.
   - LangChains' solution: https://js.langchain.com/docs/modules/chains/document/
     - "These are the core chains for working with Documents. They are useful for summarizing documents, answering questions over documents, extracting information from documents, and more."
+    - We used: RefineChain here: https://js.langchain.com/docs/modules/chains/document/refine
   - Vector DB / embedding: https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
 
 ### Workflows guide for myself in future
@@ -112,5 +113,5 @@ Planescale workflow:
 - create branch `pscale branch create mood dev`
 - connect `pscale connect mood dev --port 3309`
 - `npx prisma db push` push to open local IP:port after connection to planetscale via shell
-- - `Your database is now in sync with your Prisma schema.` on success
-- - `There might be data loss when applying the changes`: safety rail in case you're overwriting old data without the new constraints from new schema. Yes it's okay in the dev env. Be careful in Production
+  - `Your database is now in sync with your Prisma schema.` on success
+  - `There might be data loss when applying the changes`: safety rail in case you're overwriting old data without the new constraints from new schema. Yes it's okay in the dev env. Be careful in Production
