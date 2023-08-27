@@ -3,6 +3,9 @@ import { OpenAI } from 'langchain/llms/openai';
 import { StructuredOutputParser } from 'langchain/output_parsers';
 import z from 'zod';
 import { Document } from 'langchain/document';
+import { loadQARefineChain } from 'langchain/chains';
+import { OpenAIEmbeddings } from 'langchain/embeddings/openai';
+import { MemoryVectorStore } from 'langchain/vectorstores/memory';
 
 const parser = StructuredOutputParser.fromZodSchema(
   z.object({
@@ -65,4 +68,7 @@ const qa = async (question, entries) => {
   });
 
   const model = new OpenAI({ temperature: 0, modelName: 'gpt-3.5-turbo' });
+  const chain = loadQARefineChain(model);
+  const embeddings = new OpenAIEmbeddings();
+  const store = MemoryVectorStore.fromDocuments(docs, embeddings);
 };
