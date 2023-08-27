@@ -70,5 +70,13 @@ const qa = async (question, entries) => {
   const model = new OpenAI({ temperature: 0, modelName: 'gpt-3.5-turbo' });
   const chain = loadQARefineChain(model);
   const embeddings = new OpenAIEmbeddings();
-  const store = MemoryVectorStore.fromDocuments(docs, embeddings);
+  const store = await MemoryVectorStore.fromDocuments(docs, embeddings);
+  const relevantDocs = await store.similaritySearch(question);
+
+  const res = await chain.call({
+    input_documents: relevantDocs,
+    question,
+  });
+
+  return res.output_text;
 };
