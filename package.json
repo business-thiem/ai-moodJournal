@@ -25,6 +25,7 @@
     "react-auto": "^1.0.0",
     "react-autosave": "^0.4.2",
     "react-dom": "18.2.0",
+    "react-error-boundary": "^4.0.11",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6",
     "zod": "^3.22.2"
