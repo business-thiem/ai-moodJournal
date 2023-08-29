@@ -59,7 +59,7 @@ export const analyze = async (content) => {
 
 // essentially gives an analysis of user's all journal entries. Bypass token/word limit of OpenAI
 // Vector DB (super simplified). See: https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
-const qa = async (question, entries) => {
+export const qa = async (question, entries) => {
   const docs = entries.map((entry) => {
     return new Document({
       pageContent: entry.content,
