@@ -78,7 +78,7 @@ export const qa = async (question, entries) => {
     question,
   });
 
-  console.log('ai.ts', res);
+  // console.log('ai.ts', res);
 
   return res.output_text;
 };
