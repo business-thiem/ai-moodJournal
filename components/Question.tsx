@@ -18,8 +18,8 @@ const Question = () => {
     const answer = await askQuestion(value);
     setResponse(answer);
     setLoading(false);
-    setValue('');
 
+    // setValue('');
     // console.log('question.tsx', answer);
   };
 
@@ -43,7 +43,7 @@ const Question = () => {
         </button>
       </form>
       {loading && <div>...loading</div>}
-      {response && <div>{response}</div>}
+      {response && <div>Mood Bot: {response}</div>}
     </div>
   );
 };
