@@ -18,6 +18,7 @@ export const POST = async (request) => {
     },
   });
   const answer = await qa(question, entries);
+  // console.log('question.route.ts', answer);
 
   return NextResponse.json({ data: answer });
 };

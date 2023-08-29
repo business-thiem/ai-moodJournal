@@ -6,18 +6,21 @@ import { useState } from 'react';
 const Question = () => {
   const [value, setValue] = useState('');
   const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState();
+  const [response, setResponse] = useState(null);
+
   const onChange = (e) => {
     setValue(e.target.value);
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault;
+    e.preventDefault();
     setLoading(true);
     const answer = await askQuestion(value);
     setResponse(answer);
-    setValue('');
     setLoading(false);
+    setValue('');
+
+    // console.log('question.tsx', answer);
   };
 
   return (
