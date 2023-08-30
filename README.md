@@ -85,6 +85,14 @@ Link to course notes and future references:
 
 ## Personal Notes
 
+Future TODO:
+
+- Known Bugs:
+  - Journal entry data needs revalidate/reload all entries when user finishes entry and navigates back to dashboard. Currently requires refresh.
+- UI additions:
+  - Sidebar navigation hover color do not match the anchor tag's actual size. Could be Nextjs13 Link bug that is Nextjs13 dependent.
+  - Greet User
+
 Prisma Studio Notes:
 
 - `npm install @prisma/client`: package installation for production
