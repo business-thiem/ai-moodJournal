@@ -18,6 +18,7 @@ export const POST = async () => {
   // ...analysis copies the exact schema as it was given in entry from zod schema: hover mouse over entry and analysis variables.
   await prisma.analysis.create({
     data: {
+      userId: user.id,
       entryId: entry.id,
       ...analysis,
     },
