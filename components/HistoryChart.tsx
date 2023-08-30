@@ -3,7 +3,6 @@
 import { ResponsiveContainer, Line, XAxis, Tooltip, LineChart } from 'recharts';
 
 const CustomToolTip = ({ payload, label, active }) => {
-  const analysis = payload[0].payload;
   const dateLabel = new Date(label).toLocaleString('en-us', {
     weekday: 'long',
     year: 'numeric',
@@ -14,6 +13,7 @@ const CustomToolTip = ({ payload, label, active }) => {
   });
 
   if (active) {
+    const analysis = payload[0].payload;
     return (
       <div className="p-8 custom-tooltip bg-white/5 shadow-md border border-black/10 rounded-lg backdrop-blur-md relative">
         <div
