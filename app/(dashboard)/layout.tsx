@@ -1,11 +1,5 @@
+import SideNav from '@/components/SideNav';
 import { UserButton } from '@clerk/nextjs';
-import Link from 'next/link';
-
-const links = [
-  { href: '/', label: 'Home' },
-  { href: '/journal', label: 'Journal' },
-  { href: '/history', label: 'History' },
-];
 
 const DashboardLayout = ({ children }) => {
   return (
@@ -15,16 +9,7 @@ const DashboardLayout = ({ children }) => {
           Mood Journal
         </div>
         <ul className="grid grid-cols-1 gap-1">
-          {links.map((link) => (
-            <li
-              key={link.href}
-              className="text-center px-2 py-6 text-xl border-solid border-b border-black/10 hover: hover:bg-indigo-500 duration-500"
-            >
-              <Link href={link.href} className="">
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          <SideNav />
         </ul>
       </aside>
 
