@@ -31,7 +31,7 @@ const Question = () => {
           onChange={onChange}
           value={value}
           type="text"
-          placeholder="Ask a question"
+          placeholder="Ask a question about your Journal Entries below"
           className="w-1/2 border border-black/20 px-4 py-2 text-lg rounded-lg"
         />
         <button
