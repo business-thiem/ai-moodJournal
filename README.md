@@ -72,6 +72,7 @@ Dammit! So much happened today. I found my favorite tea, Sencha green tea. I won
 - API : OpenAi API GPT3.5-turbo. See https://platform.openai.com/
 - Clerk: Authentication and user management built for React and NextJS. See https://clerk.com/ for more details
 - Prettier: Makes code look nice and formatted. Adds semicolons (good habit from Java)
+- Recharts: React Library to create simple charts. See: https://recharts.org/en-US/
 - LangChain: popular LLMs js framework for working with ai. See: https://js.langchain.com/docs/get_started/installation
 - Zod: See: https://zod.dev/
 
