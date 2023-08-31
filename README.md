@@ -163,5 +163,24 @@ Vitest
 
 Vercel Deploy Config:
 
+- Clerk: change your auth DB to production (but for personal uses you can still use your dev branch) keep in mind: real world implications means that dev users will mix with production user accounts.
+
+- PlanetScale:
+
+  - promote your DB to production (should be enabled by default).
+  - enable safe migrations of 'main' production branch
+  - 'create deploy request' dev branch to main
+  - In Overview tab: 'Ready to connect to your database?'
+    - get username and create password
+    - connect with 'prisma'
+    - copy .env and paste it into vercel environmental variables
+
+- Misc (required):
+
+  - .env.local : all your Next Public Clerk variables & openai key - put into vercel env
+
 - Build and Output Settings - Override: `npx prisma generate && next build`
+
   - See: https://www.prisma.io/docs/guides/deployment/serverless/deploy-to-vercel for reason
+
+- If above is good: good to deploy
