@@ -19,5 +19,5 @@ vi.mock('@clerk/nextjs', () => {
 
 test('Home', async () => {
   render(await HomePage());
-  expect(screen.getByText('How are you feeling today')).toBeTruthy();
+  expect(screen.getByText('a.i. powered journaling app')).toBeTruthy();
 });
