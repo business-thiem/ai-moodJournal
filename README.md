@@ -160,3 +160,7 @@ Vitest
 
 - create tests folder at root : create write tests. See home.test.tsx as sample
 - run tests with npm test
+
+Vercel Deploy Config:
+
+- Build and Output Settings - Override: `npx prisma generate && next build`
