@@ -124,3 +124,39 @@ Planescale workflow:
 - `npx prisma db push` push to open local IP:port after connection to planetscale via shell
   - `Your database is now in sync with your Prisma schema.` on success
   - `There might be data loss when applying the changes`: safety rail in case you're overwriting old data without the new constraints from new schema. Yes it's okay in the dev env. Be careful in Production
+
+Vitest
+
+- terminal: `npm i @testing-library/jest-dom @testing-library/react vitest @vitejs/plugin-react-swc jsdom --save-dev`
+- create:
+
+  - vite.config.ts at root with the following. See: https://github.com/Hendrixer/fullstack-ai-nextjs/blob/main/vite.config.ts
+
+  ```ts
+  import { defineConfig } from 'vitest/config';
+  import react from '@vitejs/plugin-react-swc';
+
+  // https://vitejs.dev/config/
+  export default defineConfig({
+    plugins: [react()],
+    test: {
+      include: [
+        '**/**tests**/**/_.[jt]s?(x)',
+        '**/?(_.)+(spec|test).[jt]s?(x)',
+      ],
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: 'setupTests',
+      mockReset: true,
+    },
+  });
+  ```
+
+  - setupTests.ts at root
+  - tsconfig.node.json at root : this runs client side tests on server side (still no standardized configuration for nextjs13 yet)
+
+- add `"references": [{ "path": "./tsconfig.node.json" }]` to tsconfig.json
+- add `"test": "vitest"` to package.json scripts
+
+- create tests folder at root : create write tests. See home.test.tsx as sample
+- run tests with npm test
