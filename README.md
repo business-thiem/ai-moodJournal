@@ -2,10 +2,11 @@ Placeholder for image`<img src="https://raw.githubusercontent.com/business-thiem
 
 # Overview
 
-A journal fullstack app that just ai to infer user's mood
+A journal fullstack app that just ai to infer user's mood.
 
 ## App Info
 
+- Important Note: Create new Entry is slow. Do not refresh. Openai API will take a moment to respond.
 - The App is a journaling app... more details to be added later.
 - Reads journal entry from user's journal, creates a prompt that enforces GPT to respond with consistent JSON with proper datatypes.
 - Why would the user just not give prompts to GPT? (the problem solved by the app):
