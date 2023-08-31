@@ -159,9 +159,9 @@ Vitest
 - add `"test": "vitest"` to package.json scripts
 
 - create tests folder at root : create write tests. See home.test.tsx as sample
-- run tests with npm test
+- run tests with `npm test`
 
-Vercel Deploy Config:
+#### Vercel Deploy Config:
 
 - Clerk: change your auth DB to production (but for personal uses you can still use your dev branch) keep in mind: real world implications means that dev users will mix with production user accounts.
 
@@ -178,9 +178,25 @@ Vercel Deploy Config:
 - Misc (required):
 
   - .env.local : all your Next Public Clerk variables & openai key - put into vercel env
+  - next.config.js add:
 
-- Build and Output Settings - Override: `npx prisma generate && next build`
+  ```js
+  const nextConfig = {
+    typescript: {
+      ignoreBuildErrors: true,
+    },
+    eslint: {
+      ignoreBuildErrors: true,
+      ignoreDuringBuilds: true,
+    },
+  };
+  ```
 
-  - See: https://www.prisma.io/docs/guides/deployment/serverless/deploy-to-vercel for reason
+- Vercel
+
+  - Build and Output Settings - Override: `npx prisma generate && next build`
+    - See: https://www.prisma.io/docs/guides/deployment/serverless/deploy-to-vercel for reason
+  - Double check all your env variables for deployment are good. eslint and typescript checks are turned off via `ignoreBuildErrors`
+    - this will cause vercel deploy to fail
 
 - If above is good: good to deploy
