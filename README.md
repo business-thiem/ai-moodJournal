@@ -160,6 +160,7 @@ Vitest
 
 - create tests folder at root : create write tests. See home.test.tsx as sample
 - run tests with `npm test`
+- `npm build` if you want to build locally without vercel
 
 #### Vercel Deploy Config:
 
@@ -173,7 +174,7 @@ Vitest
   - In Overview tab: 'Ready to connect to your database?'
     - get username and create password
     - connect with 'prisma'
-    - copy .env and paste it into vercel environmental variables
+    - copy .env and paste it into vercel env
 
 - Misc (required):
 
