@@ -164,3 +164,4 @@ Vitest
 Vercel Deploy Config:
 
 - Build and Output Settings - Override: `npx prisma generate && next build`
+  - See: https://www.prisma.io/docs/guides/deployment/serverless/deploy-to-vercel for reason
