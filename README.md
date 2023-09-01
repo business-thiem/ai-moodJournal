@@ -36,31 +36,31 @@ Full output:
 
 - Note: It's a full prompt to GPT. It even teaches it what a JSON schema is, looks like, and how it should respond to the user's prompt.
 
-````
-Analyze the following journal entry. Follow the instructions and format your response to match the format instructions, no matter what!
-You must format your output as a JSON value that adheres to a given "JSON Schema" instance.
+````ts
+  Analyze the following journal entry. Follow the instructions and format your response to match the format instructions, no matter what!
+  You must format your output as a JSON value that adheres to a given "JSON Schema" instance.
 
-"JSON Schema" is a declarative language that allows you to annotate and validate JSON documents.
+  "JSON Schema" is a declarative language that allows you to annotate and validate JSON documents.
 
-For example, the example "JSON Schema" instance {{"properties": {{"foo": {{"description": "a list of test words", "type": "array", "items": {{"type": "string"}}}}}}, "required": ["foo"]}}}}
-would match an object with one required property, "foo". The "type" property specifies "foo" must be an "array", and the "description" property semantically describes it as "a list of test words". The items within "foo" must be strings.
-Thus, the object {{"foo": ["bar", "baz"]}} is a well-formatted instance of this example "JSON Schema". The object {{"properties": {{"foo": ["bar", "baz"]}}}} is not well-formatted.
+  For example, the example "JSON Schema" instance {{"properties": {{"foo": {{"description": "a list of test words", "type": "array", "items": {{"type": "string"}}}}}}, "required": ["foo"]}}}}
+  would match an object with one required property, "foo". The "type" property specifies "foo" must be an "array", and the "description" property semantically describes it as "a list of test words". The items within "foo" must be strings.
+  Thus, the object {{"foo": ["bar", "baz"]}} is a well-formatted instance of this example "JSON Schema". The object {{"properties": {{"foo": ["bar", "baz"]}}}} is not well-formatted.
 
-Your output will be parsed and type-checked according to the provided schema instance, so make sure all fields in your output match the schema exactly and there are no trailing commas!
+  Your output will be parsed and type-checked according to the provided schema instance, so make sure all fields in your output match the schema exactly and there are no trailing commas!
 
-Here is the JSON Schema instance your output must adhere to. Include the enclosing markdown codeblock:
-```json
-{"type":"object","properties":{"mood":{"type":"string","description":"the mood of the person who wrote the journal entry."},"summary":{"type":"string","description":"quick summary of the entire entry."},"subject":{"type":"string","description":"the subject of the journal entry."},"negative":{"type":"boolean","description":"is the journal entry negative? (i.e. does it contain negative emotions?)."},"color":{"type":"string","description":"a hexidecimal color code that represents the mood of the entry. Example #0101fe for blue representing happiness."}},"required":["mood","summary","subject","negative","color"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
-```
+  Here is the JSON Schema instance your output must adhere to. Include the enclosing markdown codeblock:
+  ```json
+  {"type":"object","properties":{"mood":{"type":"string","description":"the mood of the person who wrote the journal entry."},"summary":{"type":"string","description":"quick summary of the entire entry."},"subject":{"type":"string","description":"the subject of the journal entry."},"negative":{"type":"boolean","description":"is the journal entry negative? (i.e. does it contain negative emotions?)."},"color":{"type":"string","description":"a hexidecimal color code that represents the mood of the entry. Example #0101fe for blue representing happiness."}},"required":["mood","summary","subject","negative","color"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+  ```
 
-Dammit! So much happened today. I found my favorite tea, Sencha green tea. I won the lottery, but I failed my exam and my girlfriend broke up with me.
-{
-  "mood": "mixed",
-  "summary": "A rollercoaster of emotions",
-  "subject": "Events of the day",
-  "negative": true,
-  "color": "#ff0000"
-}
+  Dammit! So much happened today. I found my favorite tea, Sencha green tea. I won the lottery, but I failed my exam and my girlfriend broke up with me.
+  {
+    "mood": "mixed",
+    "summary": "A rollercoaster of emotions",
+    "subject": "Events of the day",
+    "negative": true,
+    "color": "#ff0000"
+  }
 ````
 
 ## Tech used
@@ -91,8 +91,11 @@ Future TODO:
 
 - Known Bugs:
   - Journal entry data needs revalidate/reload all entries when user finishes entry and navigates back to dashboard. Currently requires refresh.
+  - On Vercel Deployment: HTTP 504 error. Possible issue: API overloaded and not responding. (Works if you wait, the openai service I paid for was cheap. Sorry.)
 - UI additions:
   - Sidebar navigation hover color do not match the anchor tag's actual size. Could be Nextjs13 Link bug that is Nextjs13 dependent.
+  - Journal Page entries need to have summary and mood color.
+  - Page navigations need improvement. What's the purpose of Home?
 
 Prisma Studio Notes:
 
