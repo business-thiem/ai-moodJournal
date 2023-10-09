@@ -4,6 +4,8 @@ Placeholder for image`<img src="https://raw.githubusercontent.com/business-thiem
 
 A journal fullstack app that just ai to infer user's mood.
 
+Link to App: https://ai-moodjournal-jlao5ot2m-business-thiem.vercel.app/ 
+
 ## App Info
 
 - Important Note: Create new Entry is slow. Do not refresh. Openai API will take a moment to respond.
