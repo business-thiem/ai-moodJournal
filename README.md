@@ -4,6 +4,7 @@ Placeholder for image`<img src="https://raw.githubusercontent.com/business-thiem
 
 A journal fullstack app that just ai to infer user's mood.
 
+//curently broken (Code Monkeys have been informed)
 Link to App: https://ai-moodjournal-jlao5ot2m-business-thiem.vercel.app/ 
 
 ## App Info
